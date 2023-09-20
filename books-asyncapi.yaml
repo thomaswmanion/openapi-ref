@@ -1,0 +1,23 @@
+asyncapi: 2.0.0
+info:
+  title: Books Event API
+  version: '1.0.0'
+  description: Notifications related to book management operations
+
+channels:
+  books/created:
+    subscribe:
+      message:
+        $ref: './components.yaml#/messageTypes/BookCreated'
+
+  books/updated:
+    subscribe:
+      message:
+        $ref: './components.yaml#/messageTypes/BookUpdated'
+
+  books/deleted:
+    subscribe:
+      message:
+        $ref: './components.yaml#/messageTypes/BookDeleted'
+
+defaultContentType: application/json
