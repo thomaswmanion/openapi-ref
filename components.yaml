@@ -1,0 +1,33 @@
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 100
+        author:
+          type: string
+          maxLength: 50
+      required:
+        - title
+        - author
+
+    Books:
+      type: array
+      items:
+        $ref: '#/components/schemas/Book'
+
+  parameters:
+    BookId:
+      name: bookId
+      in: path
+      required: true
+      description: The ID of the book
+      schema:
+        type: string
+        format: uuid
