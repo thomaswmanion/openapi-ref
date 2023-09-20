@@ -1,0 +1,50 @@
+openapi: 3.0.3
+info:
+  title: Books API
+  version: 1.0.0
+paths:
+  /books:
+    get:
+      summary: Get a list of books
+      responses:
+        '200':
+          description: A list of books
+          content:
+            application/json:
+              schema:
+                $ref: './components.yaml#/schemas/Books'
+    post:
+      summary: Add a new book
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './components.yaml#/schemas/Book'
+      responses:
+        '201':
+          description: Book created successfully
+          content:
+            application/json:
+              schema:
+                $ref: './components.yaml#/schemas/Book'
+
+  /books/{bookId}:
+    get:
+      summary: Get a book by ID
+      parameters:
+        - $ref: './components.yaml#/parameters/BookId'
+      responses:
+        '200':
+          description: A single book
+          content:
+            application/json:
+              schema:
+                $ref: './components.yaml#/schemas/Book'
+    delete:
+      summary: Delete a book by ID
+      parameters:
+        - $ref: './components.yaml#/parameters/BookId'
+      responses:
+        '204':
+          description: Book deleted successfully
