@@ -44,7 +44,7 @@ paths:
     delete:
       summary: Delete a book by ID
       parameters:
-        - $ref: './components.yaml#/parameters/BookId'
+        - $ref: './components.yaml#/components/parameters/BookId'
       responses:
         '204':
           description: Book deleted successfully
