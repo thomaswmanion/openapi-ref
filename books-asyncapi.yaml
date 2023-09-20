@@ -8,6 +8,7 @@ channels:
   books/created:
     subscribe:
       message:
-        $ref: './components.yaml#/components/schemas/Book'
+        payload:
+          $ref: './components.yaml#/components/schemas/Book'
 
 defaultContentType: application/json
