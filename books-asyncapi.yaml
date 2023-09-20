@@ -8,16 +8,6 @@ channels:
   books/created:
     subscribe:
       message:
-        $ref: './components.yaml#/messageTypes/BookCreated'
-
-  books/updated:
-    subscribe:
-      message:
-        $ref: './components.yaml#/messageTypes/BookUpdated'
-
-  books/deleted:
-    subscribe:
-      message:
-        $ref: './components.yaml#/messageTypes/BookDeleted'
+        $ref: './components.yaml#/components/schemas/Book'
 
 defaultContentType: application/json
