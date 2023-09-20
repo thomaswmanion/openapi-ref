@@ -12,7 +12,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './components.yaml#/schemas/Books'
+                $ref: './components.yaml#/components/schemas/Books'
     post:
       summary: Add a new book
       requestBody:
@@ -20,27 +20,27 @@ paths:
         content:
           application/json:
             schema:
-              $ref: './components.yaml#/schemas/Book'
+              $ref: './components.yaml#/components/schemas/Book'
       responses:
         '201':
           description: Book created successfully
           content:
             application/json:
               schema:
-                $ref: './components.yaml#/schemas/Book'
+                $ref: './components.yaml#/components/schemas/Book'
 
   /books/{bookId}:
     get:
       summary: Get a book by ID
       parameters:
-        - $ref: './components.yaml#/parameters/BookId'
+        - $ref: './components.yaml#/components/parameters/BookId'
       responses:
         '200':
           description: A single book
           content:
             application/json:
               schema:
-                $ref: './components.yaml#/schemas/Book'
+                $ref: './components.yaml#/components/schemas/Book'
     delete:
       summary: Delete a book by ID
       parameters:
